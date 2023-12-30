@@ -1,4 +1,4 @@
-import ResizeObserver from 'resize-observer-polyfill'
+// import ResizeObserver from 'resize-observer-polyfill'
 import type { IOptions } from './types'
 
 // 简单的防抖函数
@@ -46,11 +46,11 @@ export default class Resizer {
     const { width, height } = element.getBoundingClientRect()
     this.width = Math.floor(width)
     this.height = Math.floor(height)
-    
+
     if (typeof this.options.resize === 'function' && this.options.immediate) {
       this.options.resize({ width, height }, element)
     }
-    
+
     if (this.resizeObserver) {
       this.disconnect()
     }
@@ -72,7 +72,7 @@ export default class Resizer {
       let { width, height } = target.getBoundingClientRect()
       width = Math.floor(width)
       height = Math.floor(height)
-      
+
       if (this.width !== width || this.height !== height) {
         this.width = width
         this.height = height

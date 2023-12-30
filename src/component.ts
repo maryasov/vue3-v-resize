@@ -6,7 +6,7 @@ import {
   h,
   getCurrentInstance,
   type PropType,
-} from 'vue-demi'
+} from 'vue'
 import ResizeObserver from './ResizeObserver'
 import type { IOptions } from './types'
 
@@ -57,7 +57,7 @@ export default defineComponent({
         ro.destroy()
       }
     })
-    
+
     const defaultContent = slots.default?.()
     return () => (
       (defaultContent && defaultContent.length === 1)

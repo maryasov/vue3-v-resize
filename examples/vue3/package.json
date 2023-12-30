@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "v-resize-observer": "workspace:^"
+    "vue3-v-resize": "workspace:^"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.1.0",

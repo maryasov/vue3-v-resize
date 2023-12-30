@@ -1,31 +1,26 @@
-# v-resize-observer
+# vue3-v-resize
 
-[![version](https://img.shields.io/npm/v/v-resize-observer?style=flat-square)](https://www.npmjs.com/package/v-resize-observer)
-[![download](https://img.shields.io/npm/dm/v-resize-observer?style=flat-square)](https://www.npmjs.com/package/v-resize-observer)
-[![languages](https://img.shields.io/github/languages/top/meqn/v-resize-observer?style=flat-square)](https://github.com/Meqn/v-resize-observer)
-[![license](https://img.shields.io/npm/l/v-resize-observer?style=flat-square)](https://github.com/Meqn/v-resize-observer)
-![vue@2.x](https://img.shields.io/badge/Vue-2.x-brightgreen?style=flat-square)
+[![version](https://img.shields.io/npm/v/vue3-v-resize?style=flat-square)](https://www.npmjs.com/package/vue3-v-resize)
+[![download](https://img.shields.io/npm/dm/vue3-v-resize?style=flat-square)](https://www.npmjs.com/package/vue3-v-resize)
+[![languages](https://img.shields.io/github/languages/top/maryasov/vue3-v-resize?style=flat-square)](https://github.com/maryasov/vue3-v-resize)
+[![license](https://img.shields.io/npm/l/vue3-v-resize?style=flat-square)](https://github.com/maryasov/vue3-v-resize)
 ![vue@3.x](https://img.shields.io/badge/Vue-3.x-brightgreen?style=flat-square)
-
-
-
-[ [English](https://github.com/Meqn/v-resize-observer/blob/main/libs/README.zh_CN.md) | [中文](https://github.com/Meqn/v-resize-observer/blob/main/libs/README.zh_CN.md) ]
-
 
 
 Resize observer for Vue.  
 Detect size changes of DOM elements. Support Vue's directive and component.
 
-- [Vue2 Live](https://stackblitz.com/edit/vite-vue2-resize-demo?file=src%2FApp.vue)
+> Forked from [Meqn/v-resize-observer](https://github.com/Meqn/v-resize-observer)
+
 - [Vue3 Live](https://stackblitz.com/edit/vite-vue3-resize-demo?file=src%2FApp.vue)
 
 
 ## Feature
 - 🕰 Based on `ResizeObservable API` implementation
-- 🎁 Support `vue2` and `vue3`
+- 🎁 Support `vue3`
 - 💊 Support the use of directives or components
 - 🧲 Optimize the frequency of triggering resize events
-- 🛠 Support browsers: IE9+/Edge/Chrome/Safari/Firefox
+- 🛠 Support browsers: Edge/Chrome/Safari/Firefox
 
 
 
@@ -33,19 +28,11 @@ Detect size changes of DOM elements. Support Vue's directive and component.
 
 **npm**
 ```
-npm install v-resize-observer
+npm install vue3-v-resize
 ```
-
-**browser**
-```html
-<script src="https://cdn.jsdelivr.net/npm/vue-demi/lib/index.iife.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/v-resize-observer/dist/index.iife.js"></script>
-```
-
 
 ## Usage
 
-- [Vue2.x Example](https://github.com/Meqn/v-resize-observer/tree/main/examples/vue2)
 - [Vue3.x Example](https://github.com/Meqn/v-resize-observer/tree/main/examples/vue3)
 
 ```html
@@ -65,7 +52,7 @@ npm install v-resize-observer
 
 <script setup>
 import { ref } from 'vue'
-import { ResizeComponent, resizeDirective as vResize } from 'v-resize-observer'
+import { ResizeComponent, resizeDirective as vResize } from 'vue3-v-resize'
 
 const disabled = ref(false)
 
@@ -78,7 +65,7 @@ function onResize({ width, height }, target) {
 ### 1. Global Configuration
 ```js
 // main.js
-import Resizer from 'v-resize-observer'
+import Resizer from 'vue3-v-resize'
 
 // vue@3.x
 const app = createApp(App)
@@ -88,8 +75,6 @@ app.use(Resizer, {
   component: 'ResizeComponent'
 })
 
-// vue@2.x
-Vue.use(Resizer)
 ```
 
 ### 2. On demand
@@ -99,7 +84,7 @@ import { ref } from 'vue'
 import {
   ResizeComponent,
   resizeDirective as vResizeObserver //You can change the directive name, the default: `v-resize, 
-} from 'v-resize-observer'
+} from 'vue3-v-resize'
 
 // OR
 // import Resizer from 'v-resize-observer'
@@ -176,21 +161,3 @@ function onResize({ width, height }, target) {
 ### events
 - `resize`: Triggered when listening for element size changes.
 
-
-
-## ChangeLog
-
-### v2.0.0
-#### 🚀 Features
-- feat: compatible with vue2.x and 3.x;
-- feat: add Typescript type hints;
-- feat: support for global registration of custom directive names and component names;
-- feat: add re-listening function;
-- perf: remove the `limiter` trigger limit option;
-- perf: change the delay time `wait` to `delay`;
-
-#### 🐞 Bug Fixes
-- fix: Fixed failure to listen again after disabling listening.
-
-### v1.x
-- [v1.x Documents](https://meqn.github.io/v-resize-observer/)

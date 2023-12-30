@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ResizeComponent, resizeDirective as vResize } from 'v-resize-observer'
+import { ResizeComponent, resizeDirective as vResize } from 'vue3-v-resize'
 
 function onResize({ width, height }: any, el: HTMLElement) {
   if (el.getAttribute('id') === 'main') {

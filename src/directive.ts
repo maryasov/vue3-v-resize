@@ -1,4 +1,3 @@
-import { isVue2 } from 'vue-demi'
 import ResizeObserver from './ResizeObserver'
 import type { IOptions } from './types'
 
@@ -9,7 +8,7 @@ function getOptions({ value, arg, modifiers }): IOptions {
   }
   options.delay = isNaN(parseInt(arg)) ? 150 : parseInt(arg)
   options.immediate = !!modifiers.immediate
-  
+
   return options
 }
 
@@ -31,7 +30,7 @@ const directive = {
   }
 }
 
-export default isVue2 ? directive : {
+export default {
   mounted: directive.inserted,
   beforeUnmount: directive.unbind
 }
